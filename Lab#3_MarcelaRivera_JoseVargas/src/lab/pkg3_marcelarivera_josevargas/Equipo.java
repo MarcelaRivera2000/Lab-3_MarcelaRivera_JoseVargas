@@ -16,16 +16,16 @@ public class Equipo {
     private int año,campeonatos;
     private ArrayList<Persona> personal=new ArrayList();
     private ArrayList<Jugadas> jugadas=new ArrayList();
-    private Dueños due;
+    private ArrayList<Dueños> due=new ArrayList();
 
     public Equipo() {
     }
 
-    public Equipo(String nombre, int año, int campeonatos, Dueños due) {
+    public Equipo(String nombre, int año, int campeonatos) {
         this.nombre = nombre;
         this.año = año;
         this.campeonatos = campeonatos;
-        this.due = due;
+       
     }
 
     public String getNombre() {
@@ -68,11 +68,11 @@ public class Equipo {
         this.jugadas = jugadas;
     }
 
-    public Dueños getDue() {
+    public ArrayList<Dueños> getDue() {
         return due;
     }
 
-    public void setDue(Dueños due) {
+    public void setDue(ArrayList<Dueños> due) {
         this.due = due;
     }
 
