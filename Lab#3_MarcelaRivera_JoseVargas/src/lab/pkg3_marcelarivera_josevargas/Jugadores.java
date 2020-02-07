@@ -2,13 +2,14 @@
 package lab.pkg3_marcelarivera_josevargas;
 
 public class Jugadores extends Persona {
-    private int camiseta,tiro_de3,defensa,tiro_media,rebote,bandeja,pases,posteo,altura;
+    private int camiseta,tiro_de3,defensa,tiro_media,rebote,bandeja,pases,posteo;
+    private double altura;
 
     public Jugadores() {
        
     }
 
-    public Jugadores(int camiseta, int tiro_de3, int defensa, int tiro_media, int rebote, int bandeja, int pases, int posteo, int altura, String nombre, String apellido, int años_P, double salario) {
+    public Jugadores(int camiseta, int tiro_de3, int defensa, int tiro_media, int rebote, int bandeja, int pases, int posteo, double altura, String nombre, String apellido, int años_P, double salario) {
         super(nombre, apellido, años_P, salario);
         this.camiseta = camiseta;
         this.tiro_de3 = tiro_de3;
@@ -85,11 +86,11 @@ public class Jugadores extends Persona {
         this.posteo = posteo;
     }
 
-    public int getAltura() {
+    public double getAltura() {
         return altura;
     }
 
-    public void setAltura(int altura) {
+    public void setAltura(double altura) {
         this.altura = altura;
     }
 
