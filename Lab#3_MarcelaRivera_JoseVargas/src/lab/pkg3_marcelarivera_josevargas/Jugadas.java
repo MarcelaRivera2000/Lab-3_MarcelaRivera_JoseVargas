@@ -18,7 +18,10 @@ public class Jugadas {
 
     public Jugadas(String descripcion, double porcentaje) {
         this.descripcion = descripcion;
-        this.porcentaje = porcentaje;
+        if (porcentaje>0&&porcentaje<99){
+            this.porcentaje = porcentaje;
+        }
+        
     }
 
     public String getDescripcion() {
