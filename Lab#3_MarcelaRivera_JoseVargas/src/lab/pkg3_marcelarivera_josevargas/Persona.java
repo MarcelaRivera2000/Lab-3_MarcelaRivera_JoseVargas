@@ -15,10 +15,7 @@ public class Persona {
     private String nombre,apellido;
     private int años_P;
     private double salario;
-    private ArrayList<Jugadores> jugadores=new ArrayList();
-    private ArrayList<Medicos> medicos=new ArrayList();
-    private ArrayList<Dueños> dueños=new ArrayList();
-    private ArrayList<Entrenadores> entrenadores=new ArrayList();
+
     public Persona() {
     }
 
@@ -30,39 +27,6 @@ public class Persona {
     }
     
 
-    public ArrayList<Jugadores> getJugadores() {
-        return jugadores;
-    }
-
-    public void setJugadores(ArrayList<Jugadores> jugadores) {
-        this.jugadores = jugadores;
-    }
-
-    public ArrayList<Medicos> getMedicos() {
-        return medicos;
-    }
-
-    public void setMedicos(ArrayList<Medicos> medicos) {
-        this.medicos = medicos;
-    }
-
-    public ArrayList<Dueños> getDueños() {
-        return dueños;
-    }
-
-    public void setDueños(ArrayList<Dueños> dueños) {
-        this.dueños = dueños;
-    }
-
-    public ArrayList<Entrenadores> getEntrenadores() {
-        return entrenadores;
-    }
-
-    public void setEntrenadores(ArrayList<Entrenadores> entrenadores) {
-        this.entrenadores = entrenadores;
-    }
-
- 
 
     public String getNombre() {
         return nombre;
@@ -98,7 +62,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", a\u00f1os_P=" + años_P + ", salario=" + salario + ", jugadores=" + jugadores + ", medicos=" + medicos + ", due\u00f1os=" + dueños + ", entrenadores=" + entrenadores + '}';
+        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", a\u00f1os_P=" + años_P + ", salario=" + salario ;
     }
 
    
