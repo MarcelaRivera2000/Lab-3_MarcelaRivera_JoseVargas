@@ -49,13 +49,10 @@ static int cont_global = 0;
     }
     static String nombre_equipo, ciudad;
     static int año_fundacion, campeonatos, camiseta;
-<<<<<<< HEAD
+
     static  double altura, netWorth;
     static ArrayList<Equipo> equipos=new ArrayList();
-=======
-    static double altura;
-    static ArrayList<Equipo> equipos = new ArrayList();
->>>>>>> 44c0b5e10878afc4df18ea262f44300c8f9cf2d0
+    
     
     public static void equipo() {
         System.out.println("Ingrese el nombre de su equipo: ");
@@ -102,13 +99,9 @@ static int cont_global = 0;
                     int pases = entrada.nextInt();
                     System.out.println("Ingrese OVR de posteo: ");
                     int posteo = entrada.nextInt();
-<<<<<<< HEAD
+
                     System.out.println("Ingrese el salario:");
                     double salario=entrada.nextDouble();
-=======
-                    System.out.println("Salario:");
-                    double salario = entrada.nextDouble();
->>>>>>> 44c0b5e10878afc4df18ea262f44300c8f9cf2d0
                     System.out.println("Ingrese la posicion: \n"
                             + "1] Base\n"
                             + "2] Escolta\n"
@@ -133,13 +126,10 @@ static int cont_global = 0;
                             altura = 2.13;
                             break;
                     }
-<<<<<<< HEAD
+
                     equipos.get(cont_global).getPersonal().add(new Jugadores(camiseta, tiro_de3, defensa, tiro_media, rebote, bandeja, pases, posteo, altura, nombre, apellido, años_P,salario));
                     System.out.println("Jugador agregado con exito!");
                     System.out.println();
-=======
-                    equipos.get(0).getPersonal().add(new Jugadores(camiseta, tiro_de3, defensa, tiro_media, rebote, bandeja, pases, posteo, altura, nombre, apellido, años_P, salario));                    
->>>>>>> 44c0b5e10878afc4df18ea262f44300c8f9cf2d0
                     break;
                 case 2:
                     contt++;
@@ -182,7 +172,6 @@ static int cont_global = 0;
                     break;
                 case 4:
                     contttt++;
-<<<<<<< HEAD
                     System.out.println("Fue jugador en el pasado?: ");
                     String fue_jugador = entrada.next();
                     System.out.println("Jugada favorita: ");
@@ -206,9 +195,6 @@ static int cont_global = 0;
                     }
                     System.out.println("Entrenador agregado con exito!");
                     System.out.println();
-=======
-                    
->>>>>>> 44c0b5e10878afc4df18ea262f44300c8f9cf2d0
                     break;
                 case 5:
                     if (cont >= 5 && contt >= 3 && conttt >= 1 && contttt >= 3) {
