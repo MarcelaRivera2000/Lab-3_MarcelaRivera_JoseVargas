@@ -28,6 +28,7 @@ public class Lab3_MarcelaRivera_JoseVargas {
             int opcion = entrada.nextInt();
             switch (opcion) {
                 case 1:
+                    equipo();
                     equipos.add(new Equipo(nombre_equipo, año_fundacion, campeonatos));
                     break;
                 case 2:
@@ -49,7 +50,7 @@ public class Lab3_MarcelaRivera_JoseVargas {
     static  double altura;
     static ArrayList<Equipo> equipos=new ArrayList();
     
-    public void equipo() {
+    public static void equipo() {
         System.out.println("Ingrese el nombre de su equipo: ");
         nombre_equipo = entrada.next();
         System.out.println("Ingrese el año de fundacion: ");
