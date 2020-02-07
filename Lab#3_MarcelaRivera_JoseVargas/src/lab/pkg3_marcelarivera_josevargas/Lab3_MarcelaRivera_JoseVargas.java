@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Lab3_MarcelaRivera_JoseVargas {
     
     static Scanner entrada = new Scanner(System.in);
-
+   
     /**
      * @param args the command line arguments
      */
@@ -348,10 +348,8 @@ public class Lab3_MarcelaRivera_JoseVargas {
                         System.out.println("Ingrese el nuevo posteo: ");
                         int annnnnnnnnn=entrada.nextInt();
                         ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setPosteo(annnnnnnnnn);
-                        break;
-                              
+                        break;       
                 }
-                
                 break;
             case 2:
                 break;
@@ -363,4 +361,6 @@ public class Lab3_MarcelaRivera_JoseVargas {
         }
         
     }
+    
+
 }
