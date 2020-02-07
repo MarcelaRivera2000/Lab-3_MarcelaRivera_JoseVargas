@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Lab3_MarcelaRivera_JoseVargas {
 
     static Scanner entrada = new Scanner(System.in);
-
+static int cont_global = 0;
     /**
      * @param args the command line arguments
      */
@@ -29,6 +29,7 @@ public class Lab3_MarcelaRivera_JoseVargas {
             switch (opcion) {
                 case 1:
                     equipo();
+                    cont_global++;
                     equipos.add(new Equipo(nombre_equipo, año_fundacion, campeonatos));
                     break;
                 case 2:
@@ -45,9 +46,9 @@ public class Lab3_MarcelaRivera_JoseVargas {
 
         }
     }
-    static String nombre_equipo;
+    static String nombre_equipo, ciudad;
     static int año_fundacion, campeonatos, camiseta;
-    static  double altura;
+    static  double altura, netWorth;
     static ArrayList<Equipo> equipos=new ArrayList();
     
     public static void equipo() {
@@ -67,7 +68,7 @@ public class Lab3_MarcelaRivera_JoseVargas {
                     + "2] Agregar Medicos\n"
                     + "3] Agregar Dueño\n"
                     + "4] Agregar Entrenadores\n"
-                    + "5] salir");
+                    + "5] Salir");
             System.out.println("Ingrese una opcion: ");
             int opcionpersonas = entrada.nextInt();
             System.out.println("Ingrese el nombre: ");
@@ -95,7 +96,7 @@ public class Lab3_MarcelaRivera_JoseVargas {
                     int pases = entrada.nextInt();
                     System.out.println("Ingrese OVR de posteo: ");
                     int posteo = entrada.nextInt();
-                    System.out.println("Salario:");
+                    System.out.println("Ingrese el salario:");
                     double salario=entrada.nextDouble();
                     System.out.println("Ingrese la posicion: \n"
                             + "1] Base\n"
@@ -121,18 +122,74 @@ public class Lab3_MarcelaRivera_JoseVargas {
                             altura = 2.13;
                             break;
                     }
-                    equipos.get(0).getPersonal().get(0).getJugadores().add(new Jugadores(camiseta, tiro_de3, defensa, tiro_media, rebote, bandeja, pases, posteo, altura, nombre, apellido, años_P,salario));
-                   
+                    equipos.get(cont_global).getPersonal().add(new Jugadores(camiseta, tiro_de3, defensa, tiro_media, rebote, bandeja, pases, posteo, altura, nombre, apellido, años_P,salario));
+                    System.out.println("Jugador agregado con exito!");
+                    System.out.println();
                     break;
                 case 2:
                     contt++;
+                    System.out.println("Ingrese el colegio donde estudio: ");
+                    String colegio = entrada.next();
+                    System.out.println("Ingrese el salario del medico: ");
+                    double salariomed = entrada.nextDouble();
+                    System.out.println("Ingrese la labor del medico:\n"
+                            + "1] Medico General\n"
+                            + "2] Cirujano\n"
+                            + "3] Terapeuta");
+                    int opcionmedico = entrada.nextInt();
+                    String tipo = "";
+                    switch(opcionmedico){
+                        case 1:
+                           tipo = "Medico General";
+                           break;
+                        case 2:
+                           tipo = "Cirujano";
+                           break;
+                        case 3:
+                           tipo = "Terapeuta";
+                           break;
+                    }
+                    equipos.get(cont_global).getPersonal().add(new Medicos(colegio, tipo, nombre, apellido, años_P, salariomed));
+                    System.out.println("Medico agregado con exito!");
+                    System.out.println();
                     break;
                 case 3:
                     conttt++;
+                    System.out.println("Ingrese el NetWorth del dueño: ");
+                    netWorth = entrada.nextDouble();
+                    System.out.println("Ingrese la ciudad donde nacio: ");
+                    ciudad = entrada.next();
+                    System.out.println("Ingrese el salario: ");
+                    double salariodueño = entrada.nextInt();
+                    equipos.get(cont_global).getPersonal().add((new Dueños(ciudad, netWorth, nombre, apellido, años_P, salariodueño)));
+                    System.out.println("Dueño agregado con exito!");
+                    System.out.println();
                     break;
                 case 4:
                     contttt++;
-
+                    System.out.println("Fue jugador en el pasado?: ");
+                    String fue_jugador = entrada.next();
+                    System.out.println("Jugada favorita: ");
+                    String jugadafav = entrada.next();
+                    System.out.println("Ingrese su puesto: \n"
+                            + "1] Entrenador Principal\n"
+                            + "2] Asistente de Entrenador\n"
+                            + "3] Preparador Fisico");
+                    int puesto = entrada.nextInt();
+                    double sueldoent = entrada.nextDouble();
+                    switch(puesto){
+                        case 1:
+                            sueldoent = 2000000;
+                            break;
+                        case 2:
+                            sueldoent = 1000000;
+                            break;
+                        case 3:
+                            sueldoent = 800000;
+                            break;
+                    }
+                    System.out.println("Entrenador agregado con exito!");
+                    System.out.println();
                     break;
                 case 5:
                     if (cont >= 5 && contt >= 3 && conttt >= 1 && contttt >= 3) {
@@ -141,6 +198,7 @@ public class Lab3_MarcelaRivera_JoseVargas {
                     } else {
                         System.out.println("Su equipo aun no esta completo");
                     }
+                    System.out.println();
                     break;
 
             }
