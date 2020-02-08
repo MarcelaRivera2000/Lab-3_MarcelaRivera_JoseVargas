@@ -11,12 +11,12 @@ package lab.pkg3_marcelarivera_josevargas;
  */
 public class Entrenadores extends Persona{
     private String fue_jugador;
-    private Jugadas jugadafav;
+    private String jugadafav;
 
     public Entrenadores() {
     }
 
-    public Entrenadores(String fue_jugador, Jugadas jugadafav, String nombre, String apellido, int años_P, double salario) {
+    public Entrenadores(String fue_jugador, String jugadafav, String nombre, String apellido, int años_P, double salario) {
         super(nombre, apellido, años_P, salario);
         this.fue_jugador = fue_jugador;
         this.jugadafav = jugadafav;
@@ -30,11 +30,11 @@ public class Entrenadores extends Persona{
         this.fue_jugador = fue_jugador;
     }
 
-    public Jugadas getJugadafav() {
+    public String getJugadafav() {
         return jugadafav;
     }
 
-    public void setJugadafav(Jugadas jugadafav) {
+    public void setJugadafav(String jugadafav) {
         this.jugadafav = jugadafav;
     }
 
