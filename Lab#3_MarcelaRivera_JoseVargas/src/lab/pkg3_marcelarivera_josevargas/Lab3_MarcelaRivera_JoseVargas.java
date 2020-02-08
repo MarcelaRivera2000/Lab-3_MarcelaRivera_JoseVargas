@@ -6,6 +6,7 @@
 package lab.pkg3_marcelarivera_josevargas;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -14,9 +15,9 @@ import java.util.Scanner;
  */
 public class Lab3_MarcelaRivera_JoseVargas {
 
-    
     static Scanner entrada = new Scanner(System.in);
-static int cont_global = 0;
+    static int cont_global = 0;
+
     /**
      * @param args the command line arguments
      */
@@ -25,6 +26,7 @@ static int cont_global = 0;
             System.out.println("-----NBA-----");
             System.out.println("1] Crear Un Equipo");
             System.out.println("2] Simular Partida");
+            
             System.out.println("Ingrese una opcion: ");
             int opcion = entrada.nextInt();
             switch (opcion) {
@@ -34,27 +36,24 @@ static int cont_global = 0;
                     equipos.add(new Equipo(nombre_equipo, año_fundacion, campeonatos));
                     break;
                 case 2:
-                    
+                    System.out.println("Ingrese la posicion de un equipo: ");
+                    int o=entrada.nextInt();
+                    simulacion(o);
                     break;
                 case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
                     System.exit(0);
                     break;
-                
+
             }
-            
+
         }
     }
     static String nombre_equipo, ciudad;
     static int año_fundacion, campeonatos, camiseta;
 
-    static  double altura, netWorth;
-    static ArrayList<Equipo> equipos=new ArrayList();
-    
-    
+    static double altura, netWorth;
+    static ArrayList<Equipo> equipos = new ArrayList();
+
     public static void equipo() {
         System.out.println("Ingrese el nombre de su equipo: ");
         nombre_equipo = entrada.next();
@@ -107,7 +106,7 @@ static int cont_global = 0;
                     int posteo = entrada.nextInt();
 
                     System.out.println("Ingrese el salario:");
-                    double salario=entrada.nextDouble();
+                    double salario = entrada.nextDouble();
                     System.out.println("Ingrese la posicion: \n"
                             + "1] Base\n"
                             + "2] Escolta\n"
@@ -134,6 +133,7 @@ static int cont_global = 0;
                     }
 
                     equipos.get(0).getPersonal().add(new Jugadores(camiseta, tiro_de3, defensa, tiro_media, rebote, bandeja, pases, posteo, altura, nombre, apellido, años_P,salario));
+
                     System.out.println("Jugador agregado con exito!");
                     System.out.println();
                     break;
@@ -149,8 +149,9 @@ static int cont_global = 0;
                             + "3] Terapeuta");
                     int opcionmedico = entrada.nextInt();
                     String tipo = "";
-                    switch(opcionmedico){
+                    switch (opcionmedico) {
                         case 1:
+
                            tipo = "Medico General";
                            equipos.get(0).getPersonal().add(new M_general(0, colegio, tipo, nombre, apellido, años_P, salariomed));
                            break;
@@ -162,6 +163,8 @@ static int cont_global = 0;
                            tipo = "Terapeuta";
                            equipos.get(0).getPersonal().add(new M_Terapeuta(0, colegio, tipo, nombre, apellido, años_P, salariomed));
                            break;
+
+                            
                     }
                     System.out.println("Medico agregado con exito!");
                     System.out.println();
@@ -190,7 +193,7 @@ static int cont_global = 0;
                             + "3] Preparador Fisico");
                     int puesto = entrada.nextInt();
                     double sueldoent = entrada.nextDouble();
-                    switch(puesto){
+                    switch (puesto) {
                         case 1:
                             sueldoent = 2000000;
                             equipos.get(0).getPersonal().add(new E_Principal(fue_jugador, jugadafav, nombre, apellido, años_P, sueldoent));
@@ -216,127 +219,11 @@ static int cont_global = 0;
                     }
                     System.out.println();
                     break;
-                
+
             }
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     public static void modificar() {
         for (int i = 0; i < equipos.size(); i++) {
             System.out.println("\n************\nEquipo " + i + ": " + equipos.get(i) + "\n************\n");
@@ -349,82 +236,82 @@ static int cont_global = 0;
             case 1:
                 for (int i = 0; i < equipos.get(posi).getPersonal().size(); i++) {
                     if ((equipos.get(posi).getPersonal().get(i)) instanceof Jugadores) {
-                        System.out.println("\n************\nJugadores " + i + ": " + equipos.get(i).getPersonal().get(i) + "\n************\n"); 
+                        System.out.println("\n************\nJugadores " + i + ": " + equipos.get(i).getPersonal().get(i) + "\n************\n");
                     }
                 }
-        System.out.println("Ingrese la posicion del jugador que desea modificar: ");
-        int opp=entrada.nextInt();
+                System.out.println("Ingrese la posicion del jugador que desea modificar: ");
+                int opp = entrada.nextInt();
                 System.out.println("1.Modificar Nombre\n2.Modificar Apellido\n3.Modificar Años como Profesional\n4.Salario\n5.Modificar Numero de Camiseta\n6.Modificar Tiro de 3\n7.Modificar Defensa\n8.Modificar Tiro de Media\n9.Modificar Rebote\n10.Modificar Bandeja\n11.Modificar Pases\n12.Modificar Posteo\n");
-                int oppp=entrada.nextInt();
-                switch(oppp){
+                int oppp = entrada.nextInt();
+                switch (oppp) {
                     case 1:
                         System.out.println("Ingrese el nuevo nombre: ");
-                        String n=entrada.next();
+                        String n = entrada.next();
                         equipos.get(posi).getPersonal().get(opp).setNombre(n);
                         break;
                     case 2:
-                         System.out.println("Ingrese el nuevo Apellido: ");
-                        String a=entrada.next();
+                        System.out.println("Ingrese el nuevo Apellido: ");
+                        String a = entrada.next();
                         equipos.get(posi).getPersonal().get(opp).setNombre(a);
                         break;
                     case 3:
-                         System.out.println("Ingrese Años como Profesional: ");
-                        int an=entrada.nextInt();
+                        System.out.println("Ingrese Años como Profesional: ");
+                        int an = entrada.nextInt();
                         equipos.get(posi).getPersonal().get(opp).setAños_P(an);
                         break;
                     case 4:
-                         System.out.println("Ingrese el nuevo salario: ");
-                        double aan=entrada.nextDouble();
+                        System.out.println("Ingrese el nuevo salario: ");
+                        double aan = entrada.nextDouble();
                         equipos.get(posi).getPersonal().get(opp).setSalario(aan);
                         break;
                     case 5:
-                         System.out.println("Ingrese el nuevo Numero de Camiseta: ");
-                        int ann=entrada.nextInt();
-                        ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setCamiseta(ann);
+                        System.out.println("Ingrese el nuevo Numero de Camiseta: ");
+                        int ann = entrada.nextInt();
+                        ((Jugadores) equipos.get(posi).getPersonal().get(opp)).setCamiseta(ann);
                         break;
                     case 6:
-                         System.out.println("Ingrese el nuevo Tiro de 3: ");
-                        int annn=entrada.nextInt();
-                        ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setTiro_de3(annn);
+                        System.out.println("Ingrese el nuevo Tiro de 3: ");
+                        int annn = entrada.nextInt();
+                        ((Jugadores) equipos.get(posi).getPersonal().get(opp)).setTiro_de3(annn);
                         break;
                     case 7:
-                         System.out.println("Ingrese el nuevo Defensa: ");
-                        int annnn=entrada.nextInt();
-                        ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setDefensa(annnn);
+                        System.out.println("Ingrese el nuevo Defensa: ");
+                        int annnn = entrada.nextInt();
+                        ((Jugadores) equipos.get(posi).getPersonal().get(opp)).setDefensa(annnn);
                         break;
                     case 8:
                         System.out.println("Ingrese el nuevo Defensa: ");
-                        int annnnn=entrada.nextInt();
-                        ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setDefensa(annnnn);
+                        int annnnn = entrada.nextInt();
+                        ((Jugadores) equipos.get(posi).getPersonal().get(opp)).setDefensa(annnnn);
                         break;
                     case 9:
                         System.out.println("Ingrese el nuevo Tiro de medio: ");
-                        int annnnnn=entrada.nextInt();
-                        ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setTiro_media(annnnnn);
+                        int annnnnn = entrada.nextInt();
+                        ((Jugadores) equipos.get(posi).getPersonal().get(opp)).setTiro_media(annnnnn);
                         break;
                     case 10:
                         System.out.println("Ingrese el nuevo rebote: ");
-                        int annnnnnn=entrada.nextInt();
-                        ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setRebote(annnnnnn);
+                        int annnnnnn = entrada.nextInt();
+                        ((Jugadores) equipos.get(posi).getPersonal().get(opp)).setRebote(annnnnnn);
                         break;
                     case 11:
                         System.out.println("Ingrese el nuevo bandeja: ");
-                        int annnnnnnn=entrada.nextInt();
-                        ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setBandeja(annnnnnnn);
+                        int annnnnnnn = entrada.nextInt();
+                        ((Jugadores) equipos.get(posi).getPersonal().get(opp)).setBandeja(annnnnnnn);
                         break;
                     case 12:
                         System.out.println("Ingrese el nuevo pases: ");
-                        int annnnnnnnn=entrada.nextInt();
-                        ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setPases(annnnnnnnn);
+                        int annnnnnnnn = entrada.nextInt();
+                        ((Jugadores) equipos.get(posi).getPersonal().get(opp)).setPases(annnnnnnnn);
                         break;
                     case 13:
                         System.out.println("Ingrese el nuevo posteo: ");
-                        int annnnnnnnnn=entrada.nextInt();
-                        ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setPosteo(annnnnnnnnn);
+                        int annnnnnnnnn = entrada.nextInt();
+                        ((Jugadores) equipos.get(posi).getPersonal().get(opp)).setPosteo(annnnnnnnnn);
                         break;
-                              
+
                 }
-                
+
                 break;
             case 2:
                 break;
@@ -432,8 +319,247 @@ static int cont_global = 0;
                 break;
             case 4:
                 break;
-                        
+
         }
-        
-    } 
+
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    static Random r = new Random();
+
+    public static void simulacion(int posii) {
+        int enfermedad;
+        int ju = 1 + r.nextInt(equipos.get(posii).getPersonal().size()-1);
+        if (equipos.get(posii).getPersonal().get(ju) instanceof Jugadores) {
+
+        } else {
+            while (true) {
+                ju = 1 + r.nextInt(equipos.get(posii).getPersonal().size());
+                if (equipos.get(posii).getPersonal().get(ju) instanceof Jugadores) {
+                    break;
+                }
+            }
+        }
+        int lesion = 1 + r.nextInt(100);
+        if (lesion <= 40) {
+            System.out.println("Un jugador se lesiono");
+            for (Object i : equipos.get(posii).getPersonal()) {
+                if (i instanceof M_cirujano) {
+
+                    System.out.println(i + " " + equipos.get(posii).getNombre());
+                }
+            }
+            System.out.println("Ingrese el cirujano que desea mandar: ");
+            int p = entrada.nextInt();
+            for (int i = 0; i < equipos.get(posii).getPersonal().size(); i++) {
+                if (p == i) {
+                    System.out.println("Se ha enviado un cirujano");
+
+                    ((M_cirujano) equipos.get(posii).getPersonal().get(i)).setN_cirujias(((M_cirujano) equipos.get(posii).getPersonal().get(i)).getN_cirujias() + 1);
+                    break;
+                }
+            }
+            for (Object i : equipos.get(posii).getPersonal()) {
+                if (i instanceof M_Terapeuta) {
+
+                    System.out.println(i + " " + equipos.get(posii).getNombre());
+                }
+            }
+            System.out.println("Ingrese el terapeuta que desea mandar: ");
+            p = entrada.nextInt();
+            for (int i = 0; i < equipos.get(posii).getPersonal().size(); i++) {
+                if (p == i) {
+                    System.out.println("Se ha enviado un terapeuta");
+
+                    ((M_Terapeuta) equipos.get(posii).getPersonal().get(i)).setN_terapias(((M_Terapeuta) equipos.get(posii).getPersonal().get(i)).getN_terapias() + 1);
+                    break;
+                }
+            }
+
+        } else {
+            enfermedad = 1 + r.nextInt(100);
+            if (enfermedad <= 30) {
+                System.out.println("Un jugador se enfermo");
+                for (Object i : equipos.get(posii).getPersonal()) {
+                    if (i instanceof M_general) {
+
+                        System.out.println(i + " " + equipos.get(posii).getNombre());
+                    }
+                }
+                System.out.println("Ingrese el medico general que desea mandar: ");
+                int p = entrada.nextInt();
+                for (int i = 0; i < equipos.get(posii).getPersonal().size(); i++) {
+                    if (p == i) {
+                        System.out.println("Se ha enviado un medico");
+                        ((M_general) equipos.get(posii).getPersonal().get(i)).setN_enfermedades(((M_general) equipos.get(posii).getPersonal().get(i)).getN_enfermedades() + 1);
+                        break;
+                    }
+                }
+            }
+        }
+
+    }
 }
