@@ -15,6 +15,12 @@ public class M_Terapeuta extends Medicos {
     public M_Terapeuta() {
     }
 
+    public M_Terapeuta(int n_terapias, String colegio, String tipo, String nombre, String apellido, int años_P, double salario) {
+        super(colegio, tipo, nombre, apellido, años_P, salario);
+    }
+    
+    
+
     public int getN_terapias() {
         return n_terapias;
     }

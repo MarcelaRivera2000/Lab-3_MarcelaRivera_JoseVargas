@@ -75,12 +75,17 @@ static int cont_global = 0;
                     + "5] Salir");
             System.out.println("Ingrese una opcion: ");
             int opcionpersonas = entrada.nextInt();
-            System.out.println("Ingrese el nombre: ");
-            String nombre = entrada.next();
-            System.out.println("Ingrese el apellido: ");
-            String apellido = entrada.next();
-            System.out.println("Ingrese los años como profesional: ");
-            int años_P = entrada.nextInt();
+            String nombre = "";
+            String apellido = "";
+            int años_P = 0;
+            if(opcionpersonas!=5){
+                System.out.println("Ingrese el nombre: ");
+                nombre = entrada.next();
+                System.out.println("Ingrese el apellido: ");
+                apellido = entrada.next();
+                System.out.println("Ingrese los años como profesional: ");
+                años_P = entrada.nextInt();
+            }
             switch (opcionpersonas) {
                 case 1:
                     cont++;
@@ -128,7 +133,7 @@ static int cont_global = 0;
                             break;
                     }
 
-                    equipos.get(cont_global).getPersonal().add(new Jugadores(camiseta, tiro_de3, defensa, tiro_media, rebote, bandeja, pases, posteo, altura, nombre, apellido, años_P,salario));
+                    equipos.get(0).getPersonal().add(new Jugadores(camiseta, tiro_de3, defensa, tiro_media, rebote, bandeja, pases, posteo, altura, nombre, apellido, años_P,salario));
                     System.out.println("Jugador agregado con exito!");
                     System.out.println();
                     break;
@@ -147,15 +152,17 @@ static int cont_global = 0;
                     switch(opcionmedico){
                         case 1:
                            tipo = "Medico General";
+                           equipos.get(0).getPersonal().add(new M_general(0, colegio, tipo, nombre, apellido, años_P, salariomed));
                            break;
                         case 2:
                            tipo = "Cirujano";
+                           equipos.get(0).getPersonal().add(new M_cirujano(0, colegio, tipo, nombre, apellido, años_P, salariomed));
                            break;
                         case 3:
                            tipo = "Terapeuta";
+                           equipos.get(0).getPersonal().add(new M_Terapeuta(0, colegio, tipo, nombre, apellido, años_P, salariomed));
                            break;
                     }
-                    equipos.get(cont_global).getPersonal().add(new Medicos(colegio, tipo, nombre, apellido, años_P, salariomed));
                     System.out.println("Medico agregado con exito!");
                     System.out.println();
                     break;
@@ -167,7 +174,7 @@ static int cont_global = 0;
                     ciudad = entrada.next();
                     System.out.println("Ingrese el salario: ");
                     double salariodueño = entrada.nextInt();
-                    equipos.get(cont_global).getPersonal().add((new Dueños(ciudad, netWorth, nombre, apellido, años_P, salariodueño)));
+                    equipos.get(0).getPersonal().add((new Dueños(ciudad, netWorth, nombre, apellido, años_P, salariodueño)));
                     System.out.println("Dueño agregado con exito!");
                     System.out.println();
                     break;
@@ -186,12 +193,15 @@ static int cont_global = 0;
                     switch(puesto){
                         case 1:
                             sueldoent = 2000000;
+                            equipos.get(0).getPersonal().add(new E_Principal(fue_jugador, jugadafav, nombre, apellido, años_P, sueldoent));
                             break;
                         case 2:
                             sueldoent = 1000000;
+                            equipos.get(0).getPersonal().add(new E_Asistente(fue_jugador, jugadafav, nombre, apellido, años_P, sueldoent));
                             break;
                         case 3:
                             sueldoent = 800000;
+                            equipos.get(0).getPersonal().add(new E_preparador(fue_jugador, jugadafav, nombre, apellido, años_P, sueldoent));
                             break;
                     }
                     System.out.println("Entrenador agregado con exito!");
