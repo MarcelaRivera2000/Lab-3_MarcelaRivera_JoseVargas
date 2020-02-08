@@ -25,7 +25,9 @@ public class Lab3_MarcelaRivera_JoseVargas {
         while (true) {
             System.out.println("-----NBA-----");
             System.out.println("1] Crear Un Equipo");
-            System.out.println("2] Simular Partida");
+            System.out.println("2] Simulacion");
+            System.out.println("3] Modificar");
+            System.out.println("4] Salir");
             
             System.out.println("Ingrese una opcion: ");
             int opcion = entrada.nextInt();
@@ -41,8 +43,10 @@ public class Lab3_MarcelaRivera_JoseVargas {
                     simulacion(o);
                     break;
                 case 3:
-                    System.exit(0);
+                    modificar();
                     break;
+                case 4:
+                    System.exit(0);
 
             }
 
@@ -66,7 +70,8 @@ public class Lab3_MarcelaRivera_JoseVargas {
         int contt = 0;
         int conttt = 0;
         int contttt = 0;
-        while (true) {
+        boolean val = true;
+        while (val) {
             System.out.println("---Personal del Equipo---");
             System.out.println("1] Agregar Jugador\n"
                     + "2] Agregar Medicos\n"
@@ -214,7 +219,7 @@ public class Lab3_MarcelaRivera_JoseVargas {
                 case 5:
                     if (cont >= 5 && contt >= 3 && conttt >= 1 && contttt >= 3) {
                         System.out.println("EQUIPO CREADO");
-                        break;
+                        val = false;
                     } else {
                         System.out.println("Su equipo aun no esta completo");
                     }
