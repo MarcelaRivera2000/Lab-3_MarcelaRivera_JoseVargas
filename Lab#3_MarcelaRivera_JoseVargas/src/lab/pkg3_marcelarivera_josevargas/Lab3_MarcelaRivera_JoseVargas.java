@@ -211,5 +211,219 @@ static int cont_global = 0;
         }
     }
     
-   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public static void modificar() {
+        for (int i = 0; i < equipos.size(); i++) {
+            System.out.println("\n************\nEquipo " + i + ": " + equipos.get(i) + "\n************\n");
+        }
+        System.out.println("Ingrese la posicion del equipo que desea modificar: ");
+        int posi = entrada.nextInt();
+        System.out.println("\n1.Modificar un jugador\n2.Modificar un medico\n3.Modificar un dueño\n4.Modificar un Entrenador\n");
+        int op = entrada.nextInt();
+        switch (op) {
+            case 1:
+                for (int i = 0; i < equipos.get(posi).getPersonal().size(); i++) {
+                    if ((equipos.get(posi).getPersonal().get(i)) instanceof Jugadores) {
+                        System.out.println("\n************\nJugadores " + i + ": " + equipos.get(i).getPersonal().get(i) + "\n************\n"); 
+                    }
+                }
+        System.out.println("Ingrese la posicion del jugador que desea modificar: ");
+        int opp=entrada.nextInt();
+                System.out.println("1.Modificar Nombre\n2.Modificar Apellido\n3.Modificar Años como Profesional\n4.Salario\n5.Modificar Numero de Camiseta\n6.Modificar Tiro de 3\n7.Modificar Defensa\n8.Modificar Tiro de Media\n9.Modificar Rebote\n10.Modificar Bandeja\n11.Modificar Pases\n12.Modificar Posteo\n");
+                int oppp=entrada.nextInt();
+                switch(oppp){
+                    case 1:
+                        System.out.println("Ingrese el nuevo nombre: ");
+                        String n=entrada.next();
+                        equipos.get(posi).getPersonal().get(opp).setNombre(n);
+                        break;
+                    case 2:
+                         System.out.println("Ingrese el nuevo Apellido: ");
+                        String a=entrada.next();
+                        equipos.get(posi).getPersonal().get(opp).setNombre(a);
+                        break;
+                    case 3:
+                         System.out.println("Ingrese Años como Profesional: ");
+                        int an=entrada.nextInt();
+                        equipos.get(posi).getPersonal().get(opp).setAños_P(an);
+                        break;
+                    case 4:
+                         System.out.println("Ingrese el nuevo salario: ");
+                        double aan=entrada.nextDouble();
+                        equipos.get(posi).getPersonal().get(opp).setSalario(aan);
+                        break;
+                    case 5:
+                         System.out.println("Ingrese el nuevo Numero de Camiseta: ");
+                        int ann=entrada.nextInt();
+                        ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setCamiseta(ann);
+                        break;
+                    case 6:
+                         System.out.println("Ingrese el nuevo Tiro de 3: ");
+                        int annn=entrada.nextInt();
+                        ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setTiro_de3(annn);
+                        break;
+                    case 7:
+                         System.out.println("Ingrese el nuevo Defensa: ");
+                        int annnn=entrada.nextInt();
+                        ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setDefensa(annnn);
+                        break;
+                    case 8:
+                        System.out.println("Ingrese el nuevo Defensa: ");
+                        int annnnn=entrada.nextInt();
+                        ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setDefensa(annnnn);
+                        break;
+                    case 9:
+                        System.out.println("Ingrese el nuevo Tiro de medio: ");
+                        int annnnnn=entrada.nextInt();
+                        ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setTiro_media(annnnnn);
+                        break;
+                    case 10:
+                        System.out.println("Ingrese el nuevo rebote: ");
+                        int annnnnnn=entrada.nextInt();
+                        ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setRebote(annnnnnn);
+                        break;
+                    case 11:
+                        System.out.println("Ingrese el nuevo bandeja: ");
+                        int annnnnnnn=entrada.nextInt();
+                        ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setBandeja(annnnnnnn);
+                        break;
+                    case 12:
+                        System.out.println("Ingrese el nuevo pases: ");
+                        int annnnnnnnn=entrada.nextInt();
+                        ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setPases(annnnnnnnn);
+                        break;
+                    case 13:
+                        System.out.println("Ingrese el nuevo posteo: ");
+                        int annnnnnnnnn=entrada.nextInt();
+                        ((Jugadores)equipos.get(posi).getPersonal().get(opp)).setPosteo(annnnnnnnnn);
+                        break;
+                              
+                }
+                
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+                        
+        }
+        
+    } 
 }
